@@ -1,0 +1,426 @@
+.container {
+  min-height: 100vh;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+.backButton {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(235, 211, 248, 0.1);
+  border-radius: 0.8rem;
+  color: var(--light-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.backButton:hover {
+  transform: translateX(-5px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(235, 211, 248, 0.2);
+}
+
+.backButton span {
+  font-family: "Inter";
+}
+
+.container h2 {
+  font-size: 4.8rem;
+  text-align: center;
+  background: linear-gradient(to right, var(--light-color), #e1dfdf);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  font-size: 2rem;
+  font-family: "Inter";
+  font-style: italic;
+}
+
+.booksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 4rem;
+  width: 100%;
+  max-width: 120rem;
+}
+
+.bookCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1.6rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(235, 211, 248, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.bookCard:hover {
+  transform: translateY(-0.5rem);
+  border-color: rgba(235, 211, 248, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.bookCard {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.bookCover {
+  width: 100%;
+  height: 40rem;
+  object-fit: cover;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.bookCover:hover {
+  transform: scale(1.02);
+}
+
+.bookInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 1rem;
+}
+
+.bookInfo h3 {
+  font-size: 2.4rem;
+  color: var(--light-color);
+  margin-bottom: 0.5rem;
+}
+
+.bookInfo p {
+  font-size: 1.6rem;
+  color: var(--light-color);
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+.bookLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s ease-in-out;
+}
+
+.bookLink:hover {
+  transform: translateY(-5px);
+}
+
+.readMore {
+  color: var(--light-color);
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+.bookLink:hover .readMore {
+  text-decoration: underline;
+}
+
+.loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.loading h2 {
+  font-size: 3.2rem;
+  color: var(--light-color);
+  margin-bottom: 2rem;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #965fb7;
+  border-top: 4px solid var(--light-color);
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  animation: spin 1s linear infinite;
+}
+
+.error {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.error h2 {
+  font-size: 3.2rem;
+  color: #ff6b6b;
+  margin-bottom: 1rem;
+}
+
+.error p {
+  font-size: 1.8rem;
+  color: var(--light-color);
+  opacity: 0.8;
+  max-width: 60rem;
+  line-height: 1.6;
+}
+
+.returnButton {
+  margin-top: 2rem;
+  padding: 1.2rem 2.4rem;
+  font-size: 1.6rem;
+  background: linear-gradient(to right, var(--light-color), #fff);
+  border: none;
+  border-radius: 0.8rem;
+  color: var(--dark-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.returnButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.returnButton:active {
+  transform: translateY(0);
+}
+
+.noBooks {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem;
+}
+
+.noBooks p {
+  font-size: 2rem;
+  color: var(--light-color);
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
+
+.socialSection {
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+  max-width: 60rem;
+}
+
+.shareSection {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 1.6rem;
+  border: 1px solid rgba(235, 211, 248, 0.1);
+}
+
+.shareText {
+  font-size: 1.3rem;
+  color: var(--light-color);
+  margin-bottom: 1rem;
+  font-family: "Inter";
+  font-style: italic;
+}
+
+.shareText span {
+  font-weight: 600;
+  background: linear-gradient(to right, #654777, #e99898);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.shareButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  font-size: 1.3rem;
+  background: linear-gradient(to right, #e99898, #654777);
+  border: none;
+  border-radius: 0.8rem;
+  color: var(--dark-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.shareButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.shareButton:active {
+  transform: translateY(0);
+}
+
+/* queries */
+@media (max-width: 1105px) {
+  .backButton {
+    position: static;
+    margin: 2rem auto;
+    width: fit-content;
+  }
+
+  .container {
+    padding-top: 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .booksGrid {
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  }
+
+  .backButton {
+    top: 3rem;
+    left: 3rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .container h2 {
+    font-size: 3.2rem;
+    padding-top: 1rem;
+  }
+
+  .backButton {
+    position: static;
+    margin: 2rem auto;
+    width: fit-content;
+  }
+
+  .booksGrid {
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 3rem;
+  }
+
+  .bookCard {
+    max-width: 40rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .bookCover {
+    height: 30rem;
+  }
+
+  .bookInfo h3 {
+    font-size: 2rem;
+  }
+
+  .bookInfo p {
+    font-size: 1.4rem;
+  }
+
+  .loading h2,
+  .error h2 {
+    font-size: 2.4rem;
+  }
+
+  .returnButton {
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+  }
+
+  .socialSection {
+    margin-top: 4rem;
+    gap: 2rem;
+  }
+
+  .inviteSection,
+  .shareSection {
+    padding: 2rem;
+  }
+
+  .shareText {
+    font-size: 1.8rem;
+  }
+
+  .shareButton {
+    padding: 1.4rem 2.8rem;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    font-size: 3.2rem;
+    padding: 1rem 2rem;
+    gap: 2rem;
+  }
+
+  .container h2 {
+    font-size: 2.8rem;
+  }
+
+  .backButton {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 1.2rem;
+    position: static;
+    width: fit-content;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .description {
+    font-size: 1.6rem;
+  }
+
+  .bookCard {
+    padding: 1.5rem;
+  }
+
+  .bookCover {
+    height: 25rem;
+  }
+}
+
+/* Add animation for loading state */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
